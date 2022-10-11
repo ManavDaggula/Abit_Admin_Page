@@ -20,7 +20,7 @@ async function pushData(data){
   // console.log(id)
   // Add a new document in collection "cities"
   // await setDoc(doc(db, "tasks", "1234"), participantData);
-  addDoc(collection(db,"participants"),participantData).then(()=>{console.log("added data")})
+  addDoc(collection(db,"participants"),participantData).then(()=>{console.log("added data"); window.alert("Data added")})
 }
 
 function App(props) {
