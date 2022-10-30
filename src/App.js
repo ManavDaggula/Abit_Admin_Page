@@ -34,7 +34,12 @@ function App(props) {
   return (
     <>
     <DetailsTable data={props.data}/>
-    <button onClick={()=>pushData(props.data)}>Verify Participant</button>
+    <button onClick={(e)=>{
+        console.log(e.target)
+        e.target.disabled = true
+        e.target.textContent = "Added"
+        pushData(props.data)
+      }}>Verify Participant</button>
     </>
   );
 }
