@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { auth } from "./FirebaseAuthentication"
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
 import App from "./App";
+import "./style-1.css"
 
 export default function Login() {
     const [user, setUser] = useState({})
@@ -32,29 +33,29 @@ export default function Login() {
                 signInWithEmailAndPassword(auth, username, password).then(() => { console.log("succefulyy logged in") })
             }
             }>
-                <div className="input-container">
-                    <label>Username </label>
-                    <input type="text" name="uname" required />
-                </div>
-                <div className="input-container">
-                    <label>Password </label>
-                    <input type="password" name="pass" required />
-                </div>
-                <div className="button-container">
-                    <input type="submit" />
-                </div>
+                <label>Username </label>
+                <input type="text" name="uname" required />
+                <label>Password </label>
+                <input type="password" name="pass" required />
+                <input type="submit" />
+                
             </form>
         </div>
     );
+    const signOutButton = (
+        <button onClick={async (e) => { 
+            signOut(auth);
+            if(e.target.display!="none"){e.target.display="none"} }}>Sign Out</button>
+    )
 
     return (
         <div className="app">
             <div className="login-form">
-                {user?.email}
+                {/* {user?.email} */}
                 <div className="title">Sign In</div>
                 {!user ? renderForm : <App data={data}/>}
             </div>
-            <button onClick={async () => { signOut(auth) }}>Sign Out</button>
+            {user ? signOutButton:<></>}
         </div>
     );
 }

@@ -11,7 +11,7 @@ export default function DetailsTable(props) {
           <th>Phone</th>
           <th>Email</th>
           <th>Year</th>
-          <th>Department</th>
+          <th>Dpt.</th>
           <th>Event</th>
         </tr>
         </thead>
