@@ -29,7 +29,7 @@ function App(props) {
 
   
 
-//https://abit-admin-attendence.vercel.app/authorize?name=Omkar Pednekar&phone=0816959319&email=assassinlmao21@gmail.com&dept=ads&year=FE&event=asdasd
+//https://abit-admin-attendence.vercel.app/authorize?name=Manav Daggula&phone=8291609665&email=manavdaggula@gmail.com&dept=IT&year=TE&event=TBD
   // return <DetailsTable />
   return (
     <>
